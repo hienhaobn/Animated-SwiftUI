@@ -2,7 +2,7 @@
 //  CourseSection.swift
 //  AnimatedApp
 //
-//  Created by Meng To on 2022-04-14.
+//  Created by Hiển Hảo on 19/08/2025.
 //
 
 import SwiftUI

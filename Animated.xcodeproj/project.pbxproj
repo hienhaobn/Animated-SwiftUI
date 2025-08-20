@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63A2E3F12E53ACB800008038 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A2E3F02E53ACB800008038 /* TabBar.swift */; };
 		63EED30D2E50E40B0017E37D /* RiveRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 63EED30C2E50E40B0017E37D /* RiveRuntime */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63A2E3F02E53ACB800008038 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		63EED2CB2E50E0CF0017E37D /* Animated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animated.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -52,7 +50,6 @@
 		63EED2C22E50E0CF0017E37D = {
 			isa = PBXGroup;
 			children = (
-				63A2E3F02E53ACB800008038 /* TabBar.swift */,
 				63EED2CD2E50E0CF0017E37D /* Animated */,
 				63EED2CC2E50E0CF0017E37D /* Products */,
 			);
@@ -144,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63A2E3F12E53ACB800008038 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

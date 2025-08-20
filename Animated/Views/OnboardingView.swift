@@ -10,25 +10,26 @@ import RiveRuntime
 
 struct OnboardingView: View {
     let button = RiveViewModel(fileName: "button")
-    @State var showModel = false
+    @State var showModal = false
+    @Binding var show: Bool
     
     var body: some View {
         ZStack {
             background
             
             content
-                .offset(y: showModel ? -40 : 0)
+                .offset(y: showModal ? -40 : 0)
             
             Color("Shadow")
-                .opacity(showModel ? 0.4 : 0)
+                .opacity(showModal ? 0.4 : 0)
                 .ignoresSafeArea()
-            if showModel {
-                SignInView(showModal: $showModel)
+            if showModal {
+                SignInView(showModal: $showModal)
                     .transition(.move(edge: .bottom).combined(with: .opacity))
                     .overlay(
                         Button {
                             withAnimation(.spring()) {
-                                showModel = false
+                                showModal = false
                             }
                         } label: {
                             Image(systemName: "xmark")
@@ -42,6 +43,22 @@ struct OnboardingView: View {
                     )
                     .zIndex(1)
             }
+            
+            Button {
+                withAnimation {
+                    show = false
+                }
+            } label: {
+                Image(systemName: "xmark")
+                    .frame(width: 36, height: 36)
+                    .background(.black)
+                    .foregroundColor(.white)
+                    .mask(Circle())
+                    .shadow(color: .black.opacity(0.3), radius: 10, x: 0, y: 10)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            .padding(20)
+            .offset(y: showModal ? -200 : 80)
         }
     }
     
@@ -76,7 +93,7 @@ struct OnboardingView: View {
                     button.play(animationName: "active")
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                         withAnimation(.spring()) {
-                            showModel = true
+                            showModal = true
                         }
                     })
                 }
@@ -102,5 +119,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView()
+    OnboardingView(show: .constant(true))
 }
